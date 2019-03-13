@@ -7,9 +7,16 @@ secret_number = 35
 user_input = int(input("Type a number: ", ))
 print("You typed ", user_input)
 
-if(user_input == secret_number):
+user_won = user_input == secret_number
+higher = user_input > secret_number
+lesser = user_input < secret_number
+
+if(user_won):
     print("You won! :)")
 else:
-    print("You lost! :(")
+    if(higher):
+        print("You guess was higher")
+    elif(lesser):
+        print("You guess was lesser")
 
 print("End of game")
