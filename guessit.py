@@ -11,3 +11,5 @@ if(user_input == secret_number):
     print("You won! :)")
 else:
     print("You lost! :(")
+
+print("End of game")
