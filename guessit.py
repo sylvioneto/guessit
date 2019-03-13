@@ -5,8 +5,10 @@ print("*****************************")
 secret_number = 35
 no_tentatives = 1
 
-while no_tentatives <= 3:
+#while no_tentatives <= 3:
+for rodada in range(1, 3):
     print("Tentatives {} of {} ".format(no_tentatives, "3"))
+
     user_input = int(input("Type a number: ", ))
     print("You typed ", user_input)
 
