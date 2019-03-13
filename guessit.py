@@ -6,6 +6,7 @@ secret_number = 35
 no_tentatives = 3
 
 while no_tentatives > 0:
+    print("Remaining tentatives ", no_tentatives)
     user_input = int(input("Type a number: ", ))
     print("You typed ", user_input)
 
