@@ -6,15 +6,26 @@ print("Welcome to the guessing game!")
 print("*****************************")
 
 secret_number = random.randrange(1, 101);
-no_tentatives = 3
+no_tentatives = 0
 
-for rodada in range(1, no_tentatives+1):
-    print("Tentatives {} of {} ".format(rodada, no_tentatives))
+print("What difficult level you want to play?")
+print("(1) Easy, (2) Medium, (3) Hard")
+game_level = input("Level: ")
+
+if game_level == "1":
+    no_tentatives = 10
+elif game_level == "2":
+    no_tentatives = 6
+elif game_level == "3":
+    no_tentatives = 3
+
+for round in range(1, no_tentatives + 1):
+    print("Tentatives {} of {} ".format(round, no_tentatives))
 
     user_input = input("Type a number between 1 and 100: ")
     if len(user_input) == 0:
         continue
-        
+
     user_input = int(user_input)
     print("You typed ", user_input)
 
@@ -27,7 +38,8 @@ for rodada in range(1, no_tentatives+1):
     lesser = user_input < secret_number
 
     if(user_won):
-        print("You won! :)")
+        total_points = (no_tentatives - round) * 10
+        print("You won! :) Total points: ", total_points)
         break #step out the loop
     else:
         if(higher):
