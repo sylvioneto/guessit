@@ -12,7 +12,7 @@ game = input("What game? ")
 
 if game == "1":
     print("Guess it selected")
-    gallow.play()
+    guessit.play()
 elif game == "2" :
     print("Gallows selected")
-    guessit.play()
+    gallow.play()
