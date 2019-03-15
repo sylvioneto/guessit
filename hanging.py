@@ -1,15 +1,22 @@
 # author: sylvio.pedroza@gmail.com
+import random
+
+import file_handler
+
 def play():
     print("***************************")
     print("Welcome to the hanging game")
     print("***************************")
 
     # local variables
-    secret_word = "apple".upper()
     is_hanged = False
     is_won =  False
     max_tentatives = 10
     errors = 0;
+
+    file = file_handler.get_file("words.txt")
+    secret_word = file.readlines()[random.randrange(0, 5)].strip().upper()
+    file.close()
 
     # masked word
     masked_word = ["_" for l in secret_word]
@@ -40,6 +47,7 @@ def play():
 
     print("*******End of Game*********")
 
+
 # method to search a letter in a string
 def get_positions(word, letter):
     index_list = []
@@ -49,6 +57,7 @@ def get_positions(word, letter):
             index_list.append(index)
         index = index + 1
     return index_list;
+
 
 # in case of this class execution directly
 if __name__ == "__main__":
