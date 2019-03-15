@@ -5,11 +5,15 @@ def play():
     print("***************************")
 
     # local variables
-    secret_word = "bananas".upper()
+    secret_word = "apple".upper()
     is_hanged = False
     is_won =  False
-    masked_word = ["_","_", "_", "_", "_", "_", "_"]
+    masked_word = []
     max_tentatives = 10
+
+    # populate masked word
+    for i in secret_word:
+        masked_word.append("_")
 
     # loop while user does not win the game
     while(not is_hanged and not is_won):
@@ -33,6 +37,7 @@ def play():
 
     if is_won:
         print("You win")
+        print(masked_word)
 
     print("*******End of Game*********")
 
