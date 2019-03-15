@@ -15,7 +15,12 @@ def play():
     errors = 0;
 
     file = file_handler.get_file("words.txt")
-    secret_word = file.readlines()[random.randrange(0, 5)].strip().upper()
+    words = []
+
+    for w in file:
+        words.append(w.strip().upper())
+
+    secret_word = words[random.randrange(0, len(words))]
     file.close()
 
     # masked word
