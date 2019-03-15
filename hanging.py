@@ -8,19 +8,18 @@ def play():
     secret_word = "apple".upper()
     is_hanged = False
     is_won =  False
-    masked_word = []
     max_tentatives = 10
+    errors = 0;
 
-    # populate masked word
-    for i in secret_word:
-        masked_word.append("_")
+    # masked word
+    masked_word = ["_" for l in secret_word]
 
     # loop while user does not win the game
     while(not is_hanged and not is_won):
         print(masked_word)
         guessing = input("Letter : ").strip().upper()
 
-        index_list = has_letter(secret_word, guessing)
+        index_list = get_positions(secret_word, guessing)
         for position in index_list:
             masked_word[position] = guessing
             print("Letter found in {}".format(position))
@@ -42,7 +41,7 @@ def play():
     print("*******End of Game*********")
 
 # method to search a letter in a string
-def has_letter(word, letter):
+def get_positions(word, letter):
     index_list = []
     index = 0
     for l in word:
