@@ -4,10 +4,13 @@ def play():
     print("Welcome to the hanging game")
     print("***************************")
 
-
     secret_word = "bananas"
+    is_hanged = False
+    is_won =  False
 
-
+    while(not is_hanged and not is_won):
+        print("Jogando....")
+        
 
     print("*******End of Game*********")
 
