@@ -13,12 +13,11 @@ def play():
     is_won =  False
     max_tentatives = 10
     errors = 0;
-
-    file = file_handler.get_file("words.txt")
     words = []
 
-    for w in file:
-        words.append(w.strip().upper())
+    with open("words.txt", "r") as file:
+        for w in file:
+            words.append(w.strip().upper())
 
     secret_word = words[random.randrange(0, len(words))]
     file.close()
