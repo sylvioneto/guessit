@@ -1,4 +1,2 @@
-# game
-Project to study python3
-
-while, for, if, etc
+# Hanging and Guess Number games
+Project to study python3 features
