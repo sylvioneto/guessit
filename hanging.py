@@ -1,8 +1,6 @@
 # author: sylvio.pedroza@gmail.com
 import random
 
-import file_handler
-
 def play():
     print("***************************")
     print("Welcome to the hanging game")
